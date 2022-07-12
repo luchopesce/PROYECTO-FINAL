@@ -1,0 +1,4 @@
+@import "rfs";
+
+@include rfs($font-size-base, $body-font-size);
+@include font-size ($body-font-size);
