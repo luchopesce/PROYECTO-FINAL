@@ -1,13 +1,29 @@
 
-
-body {
-    margin: 0;
-    font-family: $body-font-family;
-    font-size: $body-font-size;
-    font-weight: $body-font-weight;
-    line-height: $body-line-height;
-    color: $body-color;
-    text-align: $body-text-align;
-    background-color: $body-bg; 
+.svg-assets {
+    display: none
 }
 
+.svg-assets path {
+    stroke-width: inherit
+}
+
+.-off-screen {
+    clip: rect(1px, 1px, 1px, 1px);
+    color: #000;
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+    position: absolute !important;
+    user-select: none;
+    width: 1px
+}
+
+img{
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}

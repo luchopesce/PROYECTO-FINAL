@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Mada:wght@200;300;400;500;600;700;900&display=swap');
 
+$gn-header-height: 64px;
+$gn-header-height-lg: 72px;
+$gn-header-height-max: 88px;
 
+$gn-header-bar-font: "Mada";
+$gn-header-bar-boxshadow: 0 2px 6px 0 rgba(0, 0, 0, .12), inset 0 -1px 0 0 #dadce0;
+$gn-header-grey: #5f6368;
 
-
-$body-font-family: 'Mada';
-$body-font-weight: 500;
-$body-line-height: 200;
-$body-color: black;
-$body-text-align: none; 
-$body-bg: black;
+$bar-header-item-height: 54px;
+$bar-header-item-padding: 18px;
+$bar-header-item-weight: 400;
+$bar-header-item-colorlink: #1a73e8;
+$bar-header-item-whitecolor: #f8f9fa;
+$bar-header-item-oscuro: #202124;

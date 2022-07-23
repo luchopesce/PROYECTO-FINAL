@@ -1,0 +1,30 @@
+{
+  "name": "proyecto-final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "node-sass --include-path scss assets/scss/style.scss assets/css/style.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luchopesce/PROYECTO-FINAL.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luchopesce/PROYECTO-FINAL/issues"
+  },
+  "homepage": "https://github.com/luchopesce/PROYECTO-FINAL#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.0-beta1",
+    "bootstrap-icons": "^1.9.1"
+  }
+}
