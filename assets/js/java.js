@@ -17,3 +17,22 @@
       }, false)
     })
   })()
+
+
+  window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+      const navbar = document.getElementById('top')
+      var currentScrollPos = window.pageYOffset
+        if (prevScrollpos > currentScrollPos) {
+          navbar.classList.remove("scrolled");
+        } else {
+          navbar.classList.add("scrolled");
+        }
+        prevScrollpos = currentScrollPos;
+      }
+    }
+  }

@@ -3171,7 +3171,7 @@
    */
 
   const NAME$6 = 'offcanvas';
-  const DATA_KEY$3 = 'bs.offcanvas';
+  const DATA_KEY$3 = 'gn-header__canvas';
   const EVENT_KEY$3 = `.${DATA_KEY$3}`;
   const DATA_API_KEY$1 = '.data-api';
   const EVENT_LOAD_DATA_API$2 = `load${EVENT_KEY$3}${DATA_API_KEY$1}`;
@@ -3179,7 +3179,7 @@
   const CLASS_NAME_SHOW$3 = 'show';
   const CLASS_NAME_SHOWING$1 = 'showing';
   const CLASS_NAME_HIDING = 'hiding';
-  const CLASS_NAME_BACKDROP = 'offcanvas-backdrop';
+  const CLASS_NAME_BACKDROP = 'gn-header__canvas-drop';
   const OPEN_SELECTOR = '.offcanvas.show';
   const EVENT_SHOW$3 = `show${EVENT_KEY$3}`;
   const EVENT_SHOWN$3 = `shown${EVENT_KEY$3}`;
@@ -4722,9 +4722,9 @@
   const SELECTOR_DROPDOWN_MENU = '.dropdown-menu';
   const SELECTOR_DROPDOWN_ITEM = '.dropdown-item';
   const NOT_SELECTOR_DROPDOWN_TOGGLE = ':not(.dropdown-toggle)';
-  const SELECTOR_TAB_PANEL = '.list-group, .nav, [role="tablist"]';
-  const SELECTOR_OUTER = '.nav-item, .list-group-item';
-  const SELECTOR_INNER = `.nav-link${NOT_SELECTOR_DROPDOWN_TOGGLE}, .list-group-item${NOT_SELECTOR_DROPDOWN_TOGGLE}, [role="tab"]${NOT_SELECTOR_DROPDOWN_TOGGLE}`;
+  const SELECTOR_TAB_PANEL = '.list-group, .nav, [role="tablist"], .canvas-header__nav';
+  const SELECTOR_OUTER = '.nav-item, .list-group-item, .gn-header__item';
+  const SELECTOR_INNER = `.nav-link${NOT_SELECTOR_DROPDOWN_TOGGLE}, .list-group-item${NOT_SELECTOR_DROPDOWN_TOGGLE}, [role="tab"]${NOT_SELECTOR_DROPDOWN_TOGGLE}, .bar-header__link${NOT_SELECTOR_DROPDOWN_TOGGLE}`;
   const SELECTOR_DATA_TOGGLE = '[data-bs-toggle="tab"], [data-bs-toggle="pill"], [data-bs-toggle="list"]'; // todo:v6: could be only `tab`
 
   const SELECTOR_INNER_ELEM = `${SELECTOR_INNER}, ${SELECTOR_DATA_TOGGLE}`;
