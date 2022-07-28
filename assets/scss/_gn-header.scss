@@ -14,11 +14,11 @@
     }
     @include media-breakpoint-down(md){
         height: $gn-header-height !important;
-        margin-bottom: 0;
+        margin-bottom: 8px;
     }
     @include media-breakpoint-dbetween(md, lg, lg, xl){
             height: $gn-header-height-max !important;
-            margin-bottom: 35px;
+            margin-bottom: 52px;
         .gn-header__bar{
             height: auto !important;
         }
