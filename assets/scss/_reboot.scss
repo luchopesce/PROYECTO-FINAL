@@ -25,12 +25,8 @@ img{
 }
 
 a{
+    color: $gn-color-link;
     text-decoration: none;
-}
-
-
-.box{
-    @include make-box();
 }
 
 .b-example-divider {
@@ -39,10 +35,33 @@ a{
     border: solid rgba(0, 0, 0, .15);
     border-width: 1px 0;
     box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    &.small{
+        height: 0.3rem !important;
+        @include media-breakpoint-up(sm){
+            height: 0.8rem !important;
+        }
+    }
   }
 
-  
-  .bi {
-    vertical-align: -.125em;
-    fill: currentColor;
-  }
+.container{
+    @include media-breakpoint-down(sm){
+        width: auto;
+        margin-right: 1rem;
+        margin-left: 1rem;
+        }
+    }
+
+    .card-img,
+    .card-img-top,
+    .card-img-bottom,
+    .card-footer{
+        padding: calc(var(--#{$prefix}card-img-overlay-padding) / 4);
+        @include media-breakpoint-up(md){
+            padding: var(--#{$prefix}card-img-overlay-padding / 2);
+        }
+    }
+    
+    .card-body{
+            padding: calc(var(--#{$prefix}card-spacer-y) / 4) calc(var(--#{$prefix}card-spacer-x) / 4);
+    }
+

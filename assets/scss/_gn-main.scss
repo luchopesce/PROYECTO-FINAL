@@ -1,0 +1,79 @@
+
+.gn_main-propag{
+overflow: hidden !important;
+overflow-x: auto !important;
+.gn_main-propag-tier{
+@include media-breakpoint-up(lg){
+    justify-content: center;
+}
+}
+}
+
+.gn_main-propag-item{
+    a{
+        color: $gn-color-link;
+        @include media-breakpoint-down(lg){
+            font-size: small;
+        }
+    &:hover{
+        text-decoration: underline;
+    }
+    }
+    svg{
+        fill: currentColor;
+        color: $gn-color-greyoscuro;
+    }
+    h5{
+        font-weight: 400 !important;
+        color: $gn-color-greyoscuro;
+        @include media-breakpoint-down(lg){
+            font-size: medium;
+        }
+    }
+    h6{
+        @include media-breakpoint-down(lg){
+            font-size: small;
+        }
+    }
+    p{
+        color: $gn-color-link;
+    }
+}
+.gn_main-card-tier
+{
+   padding: 1rem;
+   @include media-breakpoint-up(lg){
+    padding: 2rem;
+   }
+.gn_main-card{
+    &.acc img{
+        max-height: 250px;
+    }
+    .card-title{
+        @include media-breakpoint-down(lg){
+            font-size: 1rem;
+        }
+    }
+    .card-newprice{
+        margin-bottom: 5px;
+        .card-newprice-off{
+            color: $gn-color-link;
+            margin-bottom: 5px;
+        }
+    }
+.card-oldprice{
+    color: $gn-color-grey;
+    text-decoration: line-through;
+}
+&:hover{
+    box-shadow: $box-shadow;
+}
+}
+}
+
+.gn-main_modal-item{
+    flex-wrap: wrap;
+    img{
+        max-height: 80px;
+    }
+}
