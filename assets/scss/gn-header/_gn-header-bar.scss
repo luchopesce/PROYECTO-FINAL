@@ -214,7 +214,7 @@ width: 100%
         &::after{
             @include media-breakpoint-up(md){
                 background-color: $bar-header-item-colorlink;
-                bottom: -1px;
+                bottom: -3.5px;
                 content: ' ';
                 height: 3px;
                 left: 8px;

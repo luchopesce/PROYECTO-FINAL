@@ -38,7 +38,7 @@ a{
     &.small{
         height: 0.3rem !important;
         @include media-breakpoint-up(sm){
-            height: 0.8rem !important;
+            height: 0.5rem !important;
         }
     }
   }

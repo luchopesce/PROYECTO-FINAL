@@ -21,11 +21,11 @@ overflow-x: auto !important;
     }
     svg{
         fill: currentColor;
-        color: $gn-color-greyoscuro;
+        color: $gn-color-grey;
     }
     h5{
-        font-weight: 400 !important;
-        color: $gn-color-greyoscuro;
+        font-weight: 500 !important;
+        color: $gn-color-grey;
         @include media-breakpoint-down(lg){
             font-size: medium;
         }
@@ -37,6 +37,7 @@ overflow-x: auto !important;
     }
     p{
         color: $gn-color-link;
+        font-size: 14px;
     }
 }
 .gn_main-card-tier

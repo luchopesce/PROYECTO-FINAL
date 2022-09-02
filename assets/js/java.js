@@ -19,7 +19,7 @@
   })()
 
 
-  window.onscroll = function() {scrollFunction()};
+window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
   var prevScrollpos = window.pageYOffset;

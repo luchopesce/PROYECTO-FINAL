@@ -8452,7 +8452,7 @@ a {
     height: 0.3rem !important; }
     @media (min-width: 576px) {
       .b-example-divider.small {
-        height: 0.8rem !important; } }
+        height: 0.5rem !important; } }
 
 @media (max-width: 575.98px) {
   .container {
@@ -8619,7 +8619,7 @@ a {
   color: #5f6368;
   font-family: "Mada";
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: .25px;
   max-height: 54px;
   min-height: 54px;
@@ -8663,7 +8663,7 @@ a {
     @media (min-width: 768px) {
       .gn-header__item .bar-header__link.active::after {
         background-color: #0d6efd;
-        bottom: -1px;
+        bottom: -3.5px;
         content: ' ';
         height: 3px;
         left: 8px;
@@ -8807,11 +8807,11 @@ a {
 
 .gn_main-propag-item svg {
   fill: currentColor;
-  color: #313336; }
+  color: #5f6368; }
 
 .gn_main-propag-item h5, .gn_main-propag-item .h5 {
-  font-weight: 400 !important;
-  color: #313336; }
+  font-weight: 500 !important;
+  color: #5f6368; }
   @media (max-width: 991.98px) {
     .gn_main-propag-item h5, .gn_main-propag-item .h5 {
       font-size: medium; } }
@@ -8821,7 +8821,8 @@ a {
     font-size: small; } }
 
 .gn_main-propag-item p {
-  color: #0d6efd; }
+  color: #0d6efd;
+  font-size: 14px; }
 
 .gn_main-card-tier {
   padding: 1rem; }
