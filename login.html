@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprá al mejor precio de la Argentina.
+    ¡ENVÍOS CON SEGURO Y GARANTÍA A TODO EL PAÍS!
+    Precios sujetos a cambios sin previo aviso. #storecell" />
+    <meta name="keywords" content="STORE, CELULARES, COMPUTADORAS, PC, NOTEBOOK, SMARTWATCH, IPHONE, ANDROID, APPLE, XIAOMI, RELOJ, COMPONENTES DE PC">
+    <link rel="stylesheet" href="./assets/css/style.css">
+        <title>LOGIN - StoreCELL &copy;</title>
+        <link href="login.html"  rel="canonical">
+</head>
+
+<body class="text-center">
+  <svg class="svg-assets" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="h-burger" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>   
+    </symbol>
+</svg>
+    
+  <header role="banner" id="top" class="gn-header account">
+
+    <div class="gn-header__bar account">
+        <div class="gn-header__tier account">
+            <div class="bar-header__lock-up">
+                <div class="gn-header__hamburger account">
+                    <div class="gn-header__hamburger-item account">
+                        <button type="button" aria-expanded="false" class="header-hamburger-link" data-bs-toggle="offcanvas" data-bs-target="#myoffcanvas" aria-controls="myoffcanvas">
+                            <svg class="header-hamburger-img">
+                                <use xlink:href="#h-burger"/>
+                              </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bar-header__logo gn-header__item account">
+                    <a href="" class="bar-header__link bar-header-logo__link account">
+                        <span class="-off-screen">
+                            StoreCELL Store
+                        </span>
+                        <img class="header-logo-img account"
+                        src="/assets/img/LOGO-STORECELL.svg"
+                        role="presentation"
+                        alt="StoreCELL Logo">
+                  </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="gn-header__canvas account" data-bs-scroll="false" tabindex="-1" id="myoffcanvas" aria-labelledby="myoffcanvasLabel">
+        <div class="gn-header__canvas-content gn-header__tier account">
+            <nav class="canvas-header__nav">
+                <ul class="gn-header__list account" >
+                    <li class="gn-header__item account" aria-level="1" >
+                        <a href="store" class="bar-header__link account">
+                            Store
+                        </a>
+                    </li>
+                    <li class="gn-header__item account" aria-level="1">
+                        <a href="computadoras" class="bar-header__link account" >
+                            Computadoras
+                        </a>
+                    </li>
+                    <li class="gn-header__item account" aria-level="1">
+                        <a href="celulares" class="bar-header__link account">
+                            Celulares
+                        </a>
+                    </li>
+                    <li class="gn-header__item account" aria-level="1">
+                        <a href="accesorios" class="bar-header__link account">
+                            Accesorios
+                        </a>
+                    </li>
+                    <li class="gn-header__item account" aria-level="1">
+                        <a href="#" class="bar-header__link account">
+                            Soporte
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</header>
+  <div class="container col-md-8 col-lg-5 px-5 py-2 border shadow-lg mt-5">
+    <h1 class="display-6 bold py-1 mt-2">Ingresa tus datos</h1>
+    <div class="row justify-content-center">
+      <form>
+        <div class="form-floating mt-5">
+          <input type="text" class="form-control" id="acc_login" placeholder="Usuario">
+          <label for="floatingInput">Usuario</label>
+        </div>
+        <div class="form-floating mt-3">
+          <input type="password" class="form-control" id="acc_password" placeholder="Password">
+          <label for="floatingPassword">Password</label>
+        </div>
+        <div class="d-flex checkbox my-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Recordar sesion
+          </label>
+        </div>
+        <div class="d-flex row m-auto justify-content-center">
+          <button class="w-100 btn btn-dark m-1" id="btn_login" type="button">Ingresar</button>
+        </div>
+        <div class="d-flex mt-4 mb-3 row m-auto justify-content-center">
+          <p class="mb-1 p-0 d-flex">Todavia no estas registrado?</p>
+          <a href="register" class="w-100 btn btn-primary">Registrate</a>
+        </div>
+        <div class="d-flex mb-1">
+          <a href="login">Olvidaste la password?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="/assets/js/bootstrap.js"></script>
+  <script src="/assets/js/storejs.js"></script>
+    </body>
+</html>

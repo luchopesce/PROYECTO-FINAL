@@ -33,6 +33,9 @@
     @include media-breakpoint-up(lg){
         height: $gn-header-height-lg !important;
     }
+    &.account{
+        height: $gn-header-height !important;
+    }
 }
 
 .gn-header__tier{
@@ -47,6 +50,10 @@
     @include media-breakpoint-up(xl){
         flex-direction: row;
     }
+    &.account{
+        flex-direction: column !important;
+        align-items: unset !important;
+    }
 }
 
 
@@ -56,10 +63,6 @@
     height: $gn-header-height-lg;
     min-height: $gn-header-height-lg;
     position: relative;
-    @include media-breakpoint-between(lg, xl){
-        justify-content: space-between;
-        width: 100%
-    }
 }
 
 
@@ -70,6 +73,9 @@
         height: 100%;
         @include media-breakpoint-up(md){
             display: none !important;
+        }
+        &.account{
+            display: table !important;
         }
 }
 
@@ -120,6 +126,9 @@ width: 100%
     &.gn-header__item:first-child{
         margin-left: 7px;
     }
+    &.gn-header__item.account:first-child{
+        margin-left: 7px !important;
+    }
 }
 
 .bar-header-logo__link{
@@ -128,17 +137,17 @@ width: 100%
 }
 
 .header-logo-img{
-    width: 250px;
+    width: 200px;
     @include media-breakpoint-down(md){
-        width: 180px;
-        &--canvas{
-            width: 70px;
-        }
+        width: 150px;
+    }
+    &.account{
+        width: 150px !important;
     }
 }
 
 .gn-header__item{
-    @extend %gn-header__item;
+    @extend %gn-header__item; 
     @include media-breakpoint-down(md){
             padding: 4px 0;
             width: calc(100% - 8px)
@@ -151,8 +160,60 @@ width: 100%
     }
 }
 
+.gn-header__item.account{
+    @extend %gn-header__item; 
+    margin-left: 0;
+    padding: 4px 0;
+    width: calc(100% - 8px);
+}
+
 .gn-header__item .gn-header__item .bar-header__link{
     padding: 0 18px 0 36px
+}
+
+
+.gn-header__item.account .bar-header__link.account{
+    align-items: center;
+    display: flex;
+    background: $white;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: $gn-header-grey;
+    font-family: $gn-header-bar-font;
+    font-size: $font-size-base;
+    font-weight: $bar-header-item-weight;
+    letter-spacing: .25px;
+    max-height: $bar-header-item-height;
+    min-height: $bar-header-item-height;
+    outline: 0 !important;
+    padding-left: $bar-header-item-padding;
+    padding-right: $bar-header-item-padding;
+    white-space: nowrap;
+    border-bottom-right-radius: 100px;
+    border-top-right-radius: 100px;
+    padding: 0 18px;
+    width: 100%;
+    &:visited{
+        color: $gn-header-grey;
+    }
+        &:hover{
+            background-color: $bar-header-item-whitecolor;
+            color: $bar-header-item-oscuro;
+        }
+    &:active{
+        background-color: #f1f1f1;
+        border: 1px solid transparent;
+        box-shadow: 0 0 0 1px transparent;
+        color: $bar-header-item-oscuro;
+    }
+    &:focus{
+        background-color:$bar-header-item-whitecolor;
+        color: $bar-header-item-oscuro;
+    }
+    &.active{
+            background-color: $bar-header-item-whitecolor;
+            color: $bar-header-item-oscuro;
+    }
 }
 
 .gn-header__item .bar-header__link{
@@ -233,7 +294,7 @@ width: 100%
     @extend %bar-header-flex;
     align-items: center;
     padding: 0;
-    @include media-breakpoint-up(lg){
+    @include media-breakpoint-up(md){
         flex-direction: row
     }
     @include media-breakpoint-down(md){
@@ -258,6 +319,12 @@ width: 100%
         display: block;
         padding-bottom: 50px;
         padding-top: 80px;
+    }
+    &.account{
+        display: block;
+        padding-bottom: 50px;
+        padding-top: 80px;
+        flex-direction: unset;
     }
     @include media-breakpoint-up(md){
         flex-direction: row

@@ -65,3 +65,203 @@ a{
             padding: calc(var(--#{$prefix}card-spacer-y) / 4) calc(var(--#{$prefix}card-spacer-x) / 4);
     }
 
+    .form-signin {
+        max-width: 330px;
+        padding: 15px;
+      }
+      
+      .form-signin .form-floating:focus-within {
+        z-index: 2;
+      }
+      
+      .form-signin input[type="email"] {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      
+      .form-signin input[type="password"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+
+      .form-control, .form-control:focus, .input-group-addon {
+        border-color: #e1e1e1;
+        border-radius: 0;
+    }
+    .signup-form {
+        width: 390px;
+        margin: 0 auto;
+        padding: 30px 0;
+    }
+    .signup-form h2 {
+        color: #636363;
+        margin: 0 0 15px;
+        text-align: center;
+    }
+    .signup-form .lead {
+        font-size: 14px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .signup-form form {		
+        border-radius: 1px;
+        margin-bottom: 15px;
+        background: #fff;
+        border: 1px solid #f3f3f3;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+    .signup-form .form-group {
+        margin-bottom: 20px;
+    }
+    .signup-form label {
+        font-weight: normal;
+        font-size: 13px;
+    }
+    .signup-form .form-control {
+        min-height: 38px;
+        box-shadow: none !important;
+        border-width: 0 0 1px 0;
+    }	
+    .signup-form .input-group-addon {
+        max-width: 42px;
+        text-align: center;
+        background: none;
+        border-bottom: 1px solid #e1e1e1;
+        padding-left: 5px;
+    }
+    .signup-form .btn, .signup-form .btn:active {        
+        font-size: 16px;
+        font-weight: bold;
+        background: #19aa8d !important;
+        border-radius: 3px;
+        border: none;
+        min-width: 140px;
+    }
+    .signup-form .btn:hover, .signup-form .btn:focus {
+        background: #179b81 !important;
+    }
+    .signup-form a {
+        color: #19aa8d;
+        text-decoration: none;
+    }	
+    .signup-form a:hover {
+        text-decoration: underline;
+    }
+    .signup-form .fa {
+        font-size: 21px;
+        position: relative;
+        top: 8px;
+    }
+    .signup-form .fa-paper-plane {
+        font-size: 17px;
+    }
+    .signup-form .fa-check {
+        color: #fff;
+        left: 9px;
+        top: 18px;
+        font-size: 7px;
+        position: absolute;
+    }
+
+    .termycond{
+        ul{
+            list-style: none;
+        }
+        display: flex;
+    }
+
+    .feather {
+        width: 16px;
+        height: 16px;
+      }
+      
+      /*
+       * Sidebar
+       */
+      
+      .sidebar {
+        position: fixed;
+        top: 0;
+        /* rtl:raw:
+        right: 0;
+        */
+        bottom: 0;
+        /* rtl:remove */
+        left: 0;
+        z-index: 100; /* Behind the navbar */
+        padding: 48px 0 0; /* Height of navbar */
+        box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+      }
+      
+      @media (max-width: 767.98px) {
+        .sidebar {
+          top: 5rem;
+        }
+      }
+      
+      .sidebar-sticky {
+        position: relative;
+        top: 0;
+        height: calc(100vh - 48px);
+        padding-top: .5rem;
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+      }
+      
+      .sidebar .nav-link {
+        font-weight: 500;
+        color: #333;
+      }
+      
+      .sidebar .nav-link .feather {
+        margin-right: 4px;
+        color: #727272;
+      }
+      
+      .sidebar .nav-link.active {
+        color: #2470dc;
+      }
+      
+      .sidebar .nav-link:hover .feather,
+      .sidebar .nav-link.active .feather {
+        color: inherit;
+      }
+      
+      .sidebar-heading {
+        font-size: .75rem;
+      }
+      
+      /*
+       * Navbar
+       */
+      
+      .navbar-brand {
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+        background-color: rgba(0, 0, 0, .25);
+        box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+      }
+      
+      .navbar .navbar-toggler {
+        top: .25rem;
+        right: 1rem;
+      }
+      
+      .navbar .form-control {
+        padding: .75rem 1rem;
+      }
+      
+      .form-control-dark {
+        color: #fff;
+        background-color: rgba(255, 255, 255, .1);
+        border-color: rgba(255, 255, 255, .1);
+      }
+      
+      .form-control-dark:focus {
+        border-color: transparent;
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+      }
+      

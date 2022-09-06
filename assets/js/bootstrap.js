@@ -3175,7 +3175,7 @@
   const CLASS_NAME_SHOW$3 = 'show';
   const CLASS_NAME_SHOWING$1 = 'showing';
   const CLASS_NAME_HIDING = 'hiding';
-  const CLASS_NAME_BACKDROP = 'gn-header__canvas-drop';
+  const CLASS_NAME_BACKDROP = 'gn-header__canvas-drop account';
   const OPEN_SELECTOR = '.offcanvas.show';
   const EVENT_SHOW$3 = `show${EVENT_KEY$3}`;
   const EVENT_SHOWN$3 = `shown${EVENT_KEY$3}`;
