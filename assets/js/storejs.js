@@ -15,10 +15,12 @@ let read_file = document.getElementById('pr_fileimg');
 let tier_item = document.getElementById("pr_item_tier");
 let scroll_bar = document.getElementById("top");
 
+//boton para crear un producto
 if(btn_pr_crear){
     btn_pr_crear.addEventListener("click", set_datos);
 }
 
+//boton para logiarse
 if(btn_login){
     btn_login.addEventListener("click", (e)=>{
         e.preventDefault();
@@ -26,10 +28,12 @@ if(btn_login){
     })
 }
 
+//boton de busqueda en el panel admin
 if (btn_search_box){
     btn_search_box.addEventListener("keyup", ()=>{ search(tabla_productos) });
 }
 
+//guarda la direccion src en string de una imagen en un array
 if(read_file){
     read_file.addEventListener('change', (e)=>{
         let file = e.target.files[0];
@@ -118,6 +122,8 @@ function check_login (){
     }
 }
 
+// funcion para crear producto
+//chequea que se ingresen los datos necesarios
 function set_datos () {
     let pr_nombre = document.getElementById("pr_nombre").value;
     if(typeof pr_nombre != "string" || pr_nombre == ""){
@@ -149,6 +155,7 @@ function set_datos () {
         return;
     }
 
+//los valores de precio los convierte en numeros con . ej: 1000.15  1.000,15
     pr_oldprice = pr_precio + (pr_precio * (pr_descuento / 100));
     pr_oldprice = new Intl.NumberFormat('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(pr_oldprice)
     pr_precio = new Intl.NumberFormat('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(pr_precio)
@@ -162,6 +169,7 @@ function set_datos () {
     localStorage.setItem("productos", JSON_generar_producto);
 }
 
+//recoje los datos guardados en el local storage
 function get_datos(){
     let recibir_producto = localStorage.getItem("productos");
     if(recibir_producto){
@@ -175,6 +183,8 @@ function get_datos(){
     }
 }
 
+//crea una table en el panel admin, donde se puede ver el producto
+//la imagen se puede ver en un modal completamente sola la imagien
 function pr_tabla_admin(){
     if(tabla_productos){
         for (let producto of lista_productos){
@@ -217,6 +227,8 @@ function pr_tabla_admin(){
     }
 }
 
+
+//se puede usar el buscador de arriba en el panel admin, se puede buscar por nombre, id y categoria
 function search(el){
     let search_box = document.getElementById("pr_search_box").value;
     let pr_producto = document.querySelectorAll(".pr_items");
@@ -248,6 +260,8 @@ function search(el){
     }
 }
 
+//toma la localizacion de la pagina, respecto a eso compara con alguna categoria que este en productos
+//despliega cada producto respecto a la pagina
 function pr_productos(){
     let path = window.location.pathname;
     let page = path.split("/").pop();
@@ -286,6 +300,7 @@ function pr_productos(){
     }
 }
 
+//funcion que esconde el navbar de las paginas principales cuando haces scroll para abajo, al subir automaticamente lo despliega de nuevo
 function scrollFunction() {
     if (scroll_bar){
         let prevScrollpos = window.pageYOffset;
