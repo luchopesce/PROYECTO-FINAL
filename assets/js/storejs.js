@@ -42,7 +42,7 @@ if(read_file){
             let base64String = reader.result.replace('data:', '').replace(/^.+,/, '');
             lista_pr_img.push(base64String);
         };
-        reader.readAsDataURL(file);
+    reader.readAsDataURL(file);
     })
 }
 
@@ -308,12 +308,9 @@ function scrollFunction() {
             if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
                 let navbar = document.getElementById('top');
                 let currentScrollPos = window.pageYOffset;
-                    if (prevScrollpos > currentScrollPos) {
-                        navbar.classList.remove("scrolled");
-                    } else {
-                        navbar.classList.add("scrolled");
-                    }
-                    prevScrollpos = currentScrollPos;
+                //funcion ternario
+                prevScrollpos > currentScrollPos ? navbar.classList.remove("scrolled"):navbar.classList.add("scrolled");
+                prevScrollpos = currentScrollPos;
             }
         }
     }
