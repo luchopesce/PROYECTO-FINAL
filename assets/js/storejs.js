@@ -1,10 +1,4 @@
-//-------------FUNCIONES GENERALES------------------------
-document.addEventListener("DOMContentLoaded", function(){
-    get_datos();
-    pr_tabla_admin();
-    pr_productos();
-    scrollFunction();
-})
+
 
 //-------------ACCIONES------------------------  
 let tabla_productos = document.getElementById("pr_tabla");
@@ -14,6 +8,21 @@ let btn_search_box = document.getElementById("pr_search_box");
 let read_file = document.getElementById('pr_fileimg');
 let tier_item = document.getElementById("pr_item_tier");
 let scroll_bar = document.getElementById("top");
+let titulo_usuario = document.getElementById("titulo_usuario")
+let DOM_productosAdmin = document.querySelector(".productosAdmin");
+let DOM_productosUI = document.querySelector(".productosUI");
+const query = new URLSearchParams(window.location.search)
+let id = query.get('id');
+
+
+//-------------ARRAYS Y CLASES------------------------
+let usuarios = [{
+    name: "admin",
+    pass: "admin"
+}]
+
+let lista_productos = [];
+let lista_pr_img = [];
 
 //boton para crear un producto
 if(btn_pr_crear){
@@ -33,6 +42,11 @@ if (btn_search_box){
     btn_search_box.addEventListener("keyup", ()=>{ search(tabla_productos) });
 }
 
+if(titulo_usuario){
+    let usuarios_on = [...usuarios];
+    titulo_usuario.innerHTML = `Panel de ${usuarios_on[0].name}`
+}
+
 //guarda la direccion src en string de una imagen en un array
 if(read_file){
     read_file.addEventListener('change', (e)=>{
@@ -45,14 +59,6 @@ if(read_file){
     reader.readAsDataURL(file);
     })
 }
-
-//-------------ARRAYS Y CLASES------------------------
-let usuarios = [{
-    name: "admin",
-    pass: "admin"
-}]
-let lista_productos = [];
-let lista_pr_img = [];
 
 class Producto{
     constructor(id, nombre, precio, desc, stock, categoria, file, oldprice){
@@ -260,45 +266,6 @@ function search(el){
     }
 }
 
-//toma la localizacion de la pagina, respecto a eso compara con alguna categoria que este en productos
-//despliega cada producto respecto a la pagina
-function pr_productos(){
-    let path = window.location.pathname;
-    let page = path.split("/").pop();
-    let pr_item_filter = lista_productos.filter(el => el.categoria.toLowerCase() === page.toLowerCase())
-    if(lista_productos.some(el => el.categoria.toLowerCase() === page.toLowerCase())){
-        for(let pr_item of pr_item_filter){
-            let file_img = `data:image/png;base64,${pr_item.file}`;
-            let div_producto = document.createElement("div");
-            div_producto.classList.add("col");
-            div_producto.innerHTML = `<div class="card gn_main-card text-center">
-                                    <h5 class="card-title mt-2">${pr_item.nombre}</h5>
-                                    <a href="">
-                                    <img src="${file_img}" alt="...">
-                                    </a>
-                                    <div class="card-body">
-                                    <div class="card-oldprice">
-                                    <span class="h6">$</span>
-                                    <span class="h6">${pr_item.oldprice}</span>
-                                    </div>
-                                    <div class="card-newprice">
-                                    <span class="h4">$</span>
-                                    <span class="h4">${pr_item.precio}</span>
-                                    <span class="card-newprice-off">${pr_item.desc}% OFF</span>
-                                    </div>    
-                                    </div>
-                                    <div class="card-footer gn_main-propag-item">
-                                    <div class="d-flex justify-content-center">
-                                    <a href="" data-bs-toggle="modal" data-bs-target="#modal_medios-pagos">
-                                    <p class="mb-1 mt-1">Hasta 12 cuotas sin interés</p>
-                                    </a>
-                                    </div>
-                                    </div>
-                                    </div>`
-            tier_item.append(div_producto);
-        }
-    }
-}
 
 //funcion que esconde el navbar de las paginas principales cuando haces scroll para abajo, al subir automaticamente lo despliega de nuevo
 function scrollFunction() {
@@ -309,9 +276,131 @@ function scrollFunction() {
                 let navbar = document.getElementById('top');
                 let currentScrollPos = window.pageYOffset;
                 //funcion ternario
-                prevScrollpos > currentScrollPos ? navbar.classList.remove("scrolled"):navbar.classList.add("scrolled");
+                prevScrollpos > currentScrollPos ? navbar.classList.remove("scrolled") : navbar.classList.add("scrolled");
                 prevScrollpos = currentScrollPos;
             }
         }
     }
 }
+
+
+class Render {
+    render_productosAdmin(productos){
+        let result = "";
+        productos.forEach(producto => {
+            let file_img = `data:image/png;base64,${producto.file}`;
+            result += `<div class="col">
+            <div class="card gn_main-card text-center">
+            <h5 class="card-title mt-2">${producto.nombre}</h5>
+            <a href="">
+            <img src="${file_img}" alt="...">
+            </a>
+            <div class="card-body">
+            <div class="card-oldprice">
+            <span class="h6">$</span>
+            <span class="h6">${producto.oldprice}</span>
+            </div>
+            <div class="card-newprice">
+            <span class="h4">$</span>
+            <span class="h4">${producto.precio}</span>
+            <span class="card-newprice-off">${producto.desc}% OFF</span>
+            </div>    
+            </div>
+            </div>
+            </div>
+            </div>`
+        });
+        DOM_productosAdmin.innerHTML = result;
+    }
+    render_productosUI(productos){
+        let result = "";
+        let path = window.location.pathname;
+        let page = path.split("/").pop();
+        let productos_filter = productos.filter(el => el.categoria.toLowerCase() === page.toLowerCase()) ;
+        productos_filter.forEach(producto =>{
+            let file_img = `data:image/png;base64,${producto.file}`;
+            result += `<div id="producto_id_${producto.id}" class="col">
+            <div class="card gn_main-card text-center">
+            <h5 class="card-title mt-2">${producto.nombre}</h5>
+            <a href="${path}.html?id=${producto.id}">
+            <img src="${file_img}" alt="...">
+            </a>
+            <div class="card-body">
+            <div class="card-oldprice">
+            <span class="h6">$</span>
+            <span class="h6">${producto.oldprice}</span>
+            </div>
+            <div class="card-newprice">
+            <span class="h4">$</span>
+            <span class="h4">${producto.precio}</span>
+            <span class="card-newprice-off">${producto.desc}% OFF</span>
+            </div>    
+            </div>
+            <div class="card-footer gn_main-propag-item">
+            <div class="d-flex justify-content-center">
+            <a href="" data-bs-toggle="modal" data-bs-target="#modal_medios-pagos">
+            <p class="mb-1 mt-1">Hasta 12 cuotas sin interés</p>
+            </a>
+            </div>
+            </div>
+            </div>
+            </div>`
+        });
+        DOM_productosUI.innerHTML = result;
+    }
+    render_productoID(productos){
+        let result = "";
+        let productos_filter = lista_productos.filter(el => el.id == productos) ;
+        productos_filter.forEach(producto =>{
+            let file_img = `data:image/png;base64,${producto.file}`;
+            result += `<div id="producto_id_${producto.id}" class="col">
+            <div class="card gn_main-card text-center">
+            <h5 class="card-title mt-2">${producto.nombre}</h5>
+            <a href="">
+            <img src="${file_img}" alt="...">
+            </a>
+            <div class="card-body">
+            <div class="card-oldprice">
+            <span class="h6">$</span>
+            <span class="h6">${producto.oldprice}</span>
+            </div>
+            <div class="card-newprice">
+            <span class="h4">$</span>
+            <span class="h4">${producto.precio}</span>
+            <span class="card-newprice-off">${producto.desc}% OFF</span>
+            </div>    
+            </div>
+            <div class="card-footer gn_main-propag-item">
+            <div class="d-flex justify-content-center">
+            <a href="" data-bs-toggle="modal" data-bs-target="#modal_medios-pagos">
+            <p class="mb-1 mt-1">Hasta 12 cuotas sin interés</p>
+            </a>
+            </div>
+            </div>
+            </div>
+            </div>`
+        });
+        DOM_productosUI.innerHTML = result;
+    }
+}
+
+
+//-------------FUNCIONES GENERALES------------------------
+document.addEventListener("DOMContentLoaded", function(){
+    get_datos();
+    pr_tabla_admin();
+    scrollFunction();
+    let ui = new Render();
+    if(DOM_productosAdmin){
+        ui.render_productosAdmin(lista_productos);
+    }
+    if(DOM_productosUI){
+    if (id){
+        ui.render_productoID(id);
+    }
+    else{
+        ui.render_productosUI(lista_productos);
+    }
+    }
+});
+
