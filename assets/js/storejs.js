@@ -12,7 +12,7 @@ let titulo_usuario = document.getElementById("titulo_usuario")
 let DOM_productosAdmin = document.querySelector(".productosAdmin");
 let DOM_productosUI = document.querySelector(".productosUI");
 const query = new URLSearchParams(window.location.search)
-let id = query.get('id');
+let id = query.get('');
 
 
 //-------------ARRAYS Y CLASES------------------------
@@ -106,7 +106,7 @@ function generar_random_id(arr){
             random = parseInt(random);
             if(a == "VOLVER") return;
         }
-    return random;
+        return random;
     }
     else{
         return random;
@@ -318,11 +318,14 @@ class Render {
         let page = path.split("/").pop();
         let productos_filter = productos.filter(el => el.categoria.toLowerCase() === page.toLowerCase()) ;
         productos_filter.forEach(producto =>{
+            let nombre_url = producto.nombre.split(' ').join('-');
+            nombre_url = nombre_url.toLowerCase();
+            console.log(nombre_url);
             let file_img = `data:image/png;base64,${producto.file}`;
             result += `<div id="producto_id_${producto.id}" class="col">
             <div class="card gn_main-card text-center">
             <h5 class="card-title mt-2">${producto.nombre}</h5>
-            <a href="${path}.html?id=${producto.id}">
+            <a href="${path}.html?=${nombre_url}">
             <img src="${file_img}" alt="...">
             </a>
             <div class="card-body">
@@ -348,9 +351,9 @@ class Render {
         });
         DOM_productosUI.innerHTML = result;
     }
-    render_productoID(productos){
+    render_productoID(producto){
         let result = "";
-        let productos_filter = lista_productos.filter(el => el.id == productos) ;
+        let productos_filter = lista_productos.filter(el => el.nombre.toLowerCase() == producto) ;
         productos_filter.forEach(producto =>{
             let file_img = `data:image/png;base64,${producto.file}`;
             result += `<div id="producto_id_${producto.id}" class="col">
@@ -396,6 +399,8 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     if(DOM_productosUI){
     if (id){
+        id = id.split('-').join(' ');
+        console.log(id);
         ui.render_productoID(id);
     }
     else{
