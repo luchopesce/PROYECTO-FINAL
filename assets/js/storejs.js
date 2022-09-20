@@ -1,18 +1,20 @@
 
 
 //-------------ACCIONES------------------------  
-let tabla_productos = document.getElementById("pr_tabla");
-let btn_pr_crear = document.getElementById("btn_pr_crear");
-let btn_login = document.getElementById("btn_login")
-let btn_search_box = document.getElementById("pr_search_box");
-let read_file = document.getElementById('pr_fileimg');
-let tier_item = document.getElementById("pr_item_tier");
-let scroll_bar = document.getElementById("top");
-let titulo_usuario = document.getElementById("titulo_usuario")
-let DOM_productosAdmin = document.querySelector(".productosAdmin");
-let DOM_productosUI = document.querySelector(".productosUI");
-const query = new URLSearchParams(window.location.search)
-let id = query.get('');
+
+let up = document.getElementsByClassName('block_quantity__up')[0],
+down = document.getElementsByClassName('block_quantity__down')[0],
+input = document.getElementsByClassName('block_quantity__number')[0],
+tabla_productos = document.getElementById("pr_tabla"),
+btn_pr_crear = document.getElementById("btn_pr_crear"),
+btn_login = document.getElementById("btn_login"),
+btn_search_box = document.getElementById("pr_search_box"),
+read_file = document.getElementById('pr_fileimg'),
+tier_item = document.getElementById("pr_item_tier"),
+scroll_bar = document.getElementById("top"),
+titulo_usuario = document.getElementById("titulo_usuario"),
+DOM_productosAdmin = document.querySelector(".productosAdmin"),
+DOM_productosUI = document.querySelector(".productosUI");
 
 
 //-------------ARRAYS Y CLASES------------------------
@@ -283,7 +285,6 @@ function scrollFunction() {
     }
 }
 
-
 class Render {
     render_productosAdmin(productos){
         let result = "";
@@ -357,7 +358,7 @@ class Render {
         productos_filter.forEach(producto =>{
             let file_img = `data:image/png;base64,${producto.file}`;
             result += `<div id="producto_id_${producto.id}" class="col">
-            <div class="card gn_main-card text-center">
+            <div class="card text-center">
             <h5 class="card-title mt-2">${producto.nombre}</h5>
             <a href="">
             <img src="${file_img}" alt="...">
@@ -381,7 +382,8 @@ class Render {
             </div>
             </div>
             </div>
-            </div>`
+            </div>
+            `
         });
         DOM_productosUI.innerHTML = result;
     }
@@ -398,14 +400,31 @@ document.addEventListener("DOMContentLoaded", function(){
         ui.render_productosAdmin(lista_productos);
     }
     if(DOM_productosUI){
-    if (id){
-        id = id.split('-').join(' ');
-        console.log(id);
-        ui.render_productoID(id);
-    }
-    else{
-        ui.render_productosUI(lista_productos);
-    }
+        const query = new URLSearchParams(window.location.search);
+        let id = query.get('');
+        if (id){
+            id = id.split('-').join(' ');
+            ui.render_productoID(id);
+        }
+        else{
+            ui.render_productosUI(lista_productos);
+        }
     }
 });
 
+
+
+    function getValue() {
+        return parseInt(input.value);
+    }
+
+    up.onclick = function (event) {
+        input.value = getValue() + 1;
+    };
+    down.onclick = function (event) {
+        if (input.value <= 1) {
+            return 1;
+        } else {
+            input.value = getValue() - 1;
+        }
+    }
