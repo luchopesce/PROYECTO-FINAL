@@ -28,8 +28,9 @@ let lista_pr_img = [];
 
 //boton para crear un producto
 if(btn_pr_crear){
-    btn_pr_crear.addEventListener("click", set_datos);
-}
+    btn_pr_crear.addEventListener("click", ()=> {
+    set_datos();
+})};
 
 //boton para logiarse
 if(btn_login){
@@ -135,32 +136,60 @@ function check_login (){
 function set_datos () {
     let pr_nombre = document.getElementById("pr_nombre").value;
     if(typeof pr_nombre != "string" || pr_nombre == ""){
-        return;
+        return Swal.fire({
+            icon: 'error',
+            title: 'Nombre incorrecto',
+            text: 'Debes ingresar al menos algun caracter',
+        });
     }
     let pr_precio = parseFloat(document.getElementById("pr_precio").value);
     if(isNaN(pr_precio) == true || pr_precio == ""){
-        return;
+        return Swal.fire({
+            icon: 'error',
+            title: 'Precio incorrecto',
+            text: 'Debes ingresar precio, tiene que ser un numero',
+        });
     }
     let pr_descuento = parseInt(document.getElementById("pr_descuento").value);
     if(isNaN(pr_descuento) == true || pr_descuento == ""){
-        return;
+        return Swal.fire({
+            icon: 'error',
+            title: 'Descuento incorrecto',
+            text: 'Debes ingresar un descuento, tiene que ser un numero',
+        });
     }
     let pr_stock = parseInt(document.getElementById("pr_stock").value);
     if(isNaN(pr_stock) == true || pr_stock == ""){
-        return;
+        return Swal.fire({
+            icon: 'error',
+            title: 'Stock incorrecto',
+            text: 'Debes ingresar un descuento, tiene que ser un numero',
+        });
     }
     let pr_categoria = document.getElementById("pr_categoria").value;
     if(typeof pr_categoria != "string" || pr_categoria == ""){
-        return;
+        return Swal.fire({
+            icon: 'error',
+            title: 'Categoria incorrecta',
+            text: 'Debes ingresar una categoria',
+        });
     }
 
     let pr_id = generar_random_id(lista_productos);
     if(!pr_id){
-        return;
+        return Swal.fire({
+            icon: 'error',
+            title: 'ID incorrecto',
+            text: 'No se puedo generar un ID',
+        });
     }
 
     if(!lista_pr_img[0]){
-        return;
+        return Swal.fire({
+            icon: 'error',
+            title: 'Imagen incorrecta',
+            text: 'Debes ingresar una imagen',
+        });
     }
 
 //los valores de precio los convierte en numeros con . ej: 1000.15  1.000,15
@@ -172,6 +201,14 @@ function set_datos () {
 
     lista_productos.push(datos);
     datos.show_producto();
+
+    Toastify({
+        text: "Producto creado con exito",
+        duration: 3000,
+        style: {
+            background: "green",
+        }
+    }).showToast();
 
     let JSON_generar_producto = JSON.stringify(lista_productos);
     localStorage.setItem("productos", JSON_generar_producto);
@@ -413,8 +450,7 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 
-
-    function getValue() {
+function getValue() {
         return parseInt(input.value);
     }
 
@@ -428,3 +464,5 @@ document.addEventListener("DOMContentLoaded", function(){
             input.value = getValue() - 1;
         }
     }
+
+  
