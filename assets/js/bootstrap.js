@@ -5261,7 +5261,6 @@ window.onload = function () {
   var items = document.getElementsByClassName("sliderBlock_positionControls")[0];
   var currentSlideItem = document.getElementsByClassName("sliderBlock_positionControls__paginatorItem");
   var currentSlide = 0;
-  var slideInterval = setInterval(nextSlide, 5000);  /// Delay time of slides
 
   function nextSlide() {
       goToSlide(currentSlide + 1);
@@ -5279,14 +5278,19 @@ window.onload = function () {
       items.children[currentSlide].className = 'sliderBlock_positionControls__paginatorItem sliderBlock_positionControls__active';
   }
 
-  next.onclick = function () {
+  if(next){
+    next.onclick = function () {
       nextSlide();
-      slideInterval();
   };
-  previous.onclick = function () {
+  }
+
+  if(previous){
+    previous.onclick = function () {
       previousSlide();
-      slideInterval();
   };
+
+  }
+
 
   function goToSlideAfterPushTheMiniBlock() {
       for (var i = 0; i < currentSlideItem.length; i++) {

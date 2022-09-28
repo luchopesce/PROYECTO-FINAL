@@ -6,7 +6,8 @@
   "scripts": {
     "build-css": "node-sass --include-path scss assets/scss/style.scss assets/css/style.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve-json": "json-server --watch productos.json"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   "dependencies": {
     "bootstrap": "^5.2.0-beta1",
     "bootstrap-icons": "^1.9.1",
+    "mercadopago": "^1.5.14",
     "sweetalert2": "^11.4.32",
     "toastify-js": "^1.12.0"
   }
