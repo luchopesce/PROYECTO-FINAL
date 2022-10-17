@@ -83,42 +83,57 @@
           <h1 class="h2">Generar producto</h1>
         </div>
 
-        <form class="row g-3 needs-validation mt-2" novalidate>
+        <form id="generar_producto" class="col-md-6 row g-3 mt-2" novalidate>
           <div class="col-md-12">
             <label for="pr_nombre" class="form-label">Nombre del producto</label>
             <input type="text" class="form-control" id="pr_nombre" required>
-            <div class="invalid-feedback">
-            Debes ingresar el nombre del producto.
-            </div>
           </div>
+
           <div class="col-md-12">
-            <label for="pr_precio" class="form-label">Precio</label>
-            <div class="input-group has-validation">
+            <label for="pr_subtitulo" class="form-label">Subtitulo del producto</label>
+            <input type="text" class="form-control" id="pr_subtitulo" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="pr_precio" class="form-label">Precio real</label>
+            <div class="input-group">
               <span class="input-group-text" id="inputGroupPrepend">$</span>
               <input type="number" class="form-control" id="pr_precio" aria-describedby="inputGroupPrepend" required>
-              <div class="invalid-feedback">
-                Debes ingresar el precio del producto.
-              </div>
             </div>
           </div>
-          <div class="col-md-12">
-            <label for="pr_descuento" class="form-label">Descuento</label>
-            <div class="input-group has-validation">
+          <div class="col-md-6">
+            <label for="pr_descuento" class="form-label">Descuento disponible</label>
+            <div class="input-group">
               <span class="input-group-text" id="inputGroupPrepend">%</span>
               <input type="number" class="form-control" id="pr_descuento" aria-describedby="inputGroupPrepend" required>
-              <div class="invalid-feedback">
-                Debes ingresar el descuento del producto.
-              </div>
             </div>
           </div>
-          <div class="col-md-12">
-            <label for="pr_stock" class="form-label">Stock</label>
-            <input type="number" class="form-control" id="pr_stock" required>
-            <div class="invalid-feedback">
-            Debes ingresar el stock del producto.
+
+          <div class="col-md-6">
+            <label for="pr_color" class="form-label">Color</label>
+            <select class="form-select" id="pr_color" required>
+              <option selected disabled value="">Elegir color</option>
+              <option>Negro</option>
+              <option>Blanco</option>
+              <option>Amarillo</option>
+              <option>Rojo</option>
+              <option>Azul</option>
+              <option>Celeste</option>
+              <option>Naranja</option>
+              <option>Gris</option>
+              <option>Violeta</option>
+              <option>Marron</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label for="pr_stock_total" class="form-label">Stock total</label>
+            <div class="input-group">
+              <input type="number" class="form-control" id="pr_stock_total" aria-describedby="inputGroupPrepend" required>
             </div>
           </div>
-          <div class="col-md-12">
+
+          <div class="col-md-8">
             <label for="pr_categoria" class="form-label">Categorias</label>
             <select class="form-select" id="pr_categoria" required>
               <option selected disabled value="">Elegir categoria</option>
@@ -126,23 +141,28 @@
               <option>Celulares</option>
               <option>Accesorios</option>
             </select>
-            <div class="invalid-feedback">
-              Debes seleccionar una categoria.
-            </div>
           </div>
 
-          <div class="col-md-12">
+          <div class="col-md-8">
+            <label for="pr_desc" class="form-label">Descripcion del producto</label>
+            <textarea class="form-control" id="pr_desc" aria-label="Descripcion del producto"></textarea>
+        </div>
+
+          <div class="col-md-8">
             <label for="pr_fileimg" class="form-label">Archivo imagen</label>
             <input type="file" class="form-control" aria-label="file example" id="pr_fileimg" multiple required>
-            <div class="invalid-feedback">
-            Debes ingresar el stock del producto.
-            </div>
           </div>
+
           
+
+
           <div class="col-12 mt-5">
             <button class="btn btn-outline-dark" id="btn_pr_crear" type="submit">Crear producto</button>
           </div>
+
         </form>
+
+
       </main>
     </div>
   </div>
@@ -153,7 +173,7 @@
       <script>
         feather.replace()
       </script>
-      <script src="../assets/js/storejs.js"></script>
+      <script type="module" src="../assets/js/productos.js"></script>
       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
       <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </body>

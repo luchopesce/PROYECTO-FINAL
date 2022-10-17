@@ -1,112 +1,99 @@
 {
-  "productos": {
-    "0": {
-      "id": 91466,
-      "nombre": "asdasdtg",
-      "precio": "232,00",
-      "desc": 23,
-      "stock": 23,
-      "categoria": "Celulares",
-      "oldprice": "285,36"
-    },
-    "1": {
-      "id": 14032,
-      "nombre": "gasfasf",
-      "precio": "2.323,00",
-      "desc": 23,
-      "stock": 23,
-      "categoria": "Celulares",
-      "oldprice": "2.857,29"
-    },
-    "2": {
-      "id": 58932,
-      "nombre": "dasgas",
-      "precio": "2.323,00",
-      "desc": 23,
-      "stock": 23,
-      "categoria": "Celulares",
-      "oldprice": "2.857,29"
-    },
-    "3": {
-      "id": 64138,
-      "nombre": "afafas",
+  "productos": [
+    {
+      "id": 21841,
+      "nombre": "fafas",
       "precio": "23,00",
       "desc": 23,
       "stock": 23,
       "categoria": "Computadoras",
-      "oldprice": "28,29"
+      "oldprice": "28,29",
+      "img": [
+        "https://i.imgur.com/KE5N6Gg.jpg"
+      ]
     },
-    "4": {
-      "id": 59087,
-      "nombre": "fgagfasdf",
+    {
+      "id": 31555,
+      "nombre": "fafas",
+      "precio": "23,00",
+      "desc": 23,
+      "stock": 23,
+      "categoria": "Celulares",
+      "oldprice": "28,29",
+      "img": []
+    },
+    {
+      "id": 84977,
+      "nombre": "adasdas",
+      "precio": "23,00",
+      "desc": 23,
+      "stock": 23,
+      "categoria": "Computadoras",
+      "oldprice": "28,29",
+      "img": [
+        "https://i.imgur.com/Nnm2TFZ.jpg"
+      ]
+    },
+    {
+      "id": 43119,
+      "nombre": "gadgasdfg",
+      "precio": "23,00",
+      "desc": 23,
+      "stock": 23,
+      "categoria": "Celulares",
+      "oldprice": "28,29",
+      "img": [
+        "https://i.imgur.com/9NJCV83.jpg"
+      ]
+    },
+    {
+      "id": 93183,
+      "nombre": "fzXfvzxc",
+      "precio": "23,00",
+      "desc": 23,
+      "stock": 23,
+      "categoria": "Celulares",
+      "oldprice": "28,29",
+      "img": []
+    },
+    {
+      "id": 42301,
+      "nombre": "afasf",
+      "precio": "23,00",
+      "desc": 23,
+      "stock": 23,
+      "categoria": "Celulares",
+      "oldprice": "28,29",
+      "img": [
+        "https://i.imgur.com/PyD6bW8.jpg",
+        "https://i.imgur.com/gP4G0ay.png",
+        "https://i.imgur.com/5cH8vAk.png"
+      ]
+    },
+    {
+      "id": 19964,
+      "nombre": "AAAAA",
       "precio": "2.323,00",
       "desc": 23,
       "stock": 23,
       "categoria": "Celulares",
-      "oldprice": "2.857,29"
+      "oldprice": "2.857,29",
+      "img": [
+        "https://i.imgur.com/rekHsC1.png"
+      ]
     },
-    "5": {
-      "id": 40169,
-      "nombre": "gagfasf",
-      "precio": "232,00",
-      "desc": 23,
-      "stock": 23,
-      "categoria": "Computadoras",
-      "oldprice": "285,36"
-    },
-    "6": {
-      "id": 67516,
-      "nombre": "afasfas",
-      "precio": "232,00",
-      "desc": 23,
-      "stock": 23,
-      "categoria": "Celulares",
-      "oldprice": "285,36"
-    },
-    "7": {
-      "id": 94592,
-      "nombre": "afgasfas",
-      "precio": "23,00",
-      "desc": 23,
-      "stock": 23,
-      "categoria": "Accesorios",
-      "oldprice": "28,29"
-    },
-    "8": {
-      "id": 20749,
-      "nombre": "afasfasf",
+    {
+      "id": 20298,
+      "nombre": "eeee",
       "precio": "2.323,00",
       "desc": 23,
       "stock": 23,
-      "categoria": "Computadoras",
-      "oldprice": "2.857,29"
-    },
-    "9": {
-      "id": 21851,
-      "nombre": "agasdga",
-      "precio": "23,00",
-      "desc": 23,
-      "stock": 23,
-      "categoria": "Computadoras",
-      "oldprice": "28,29"
-    },
-    "10": {
-      "id": 79810,
-      "nombre": "dgasdgasdg",
-      "precio": "23,00",
-      "desc": 23,
-      "stock": 23,
-      "categoria": "Computadoras",
-      "oldprice": "28,29"
-    },
-    "11": {
-      "id": 77060,
-      "nombre": "hgsrgsad",
-      "precio": "232,00",
-      "desc": 23,
-      "stock": 23,
-      "categoria": "Computadoras",
-      "oldprice": "285,36"
+      "categoria": "Celulares",
+      "oldprice": "2.857,29",
+      "img": [
+        "https://i.imgur.com/XTvOZhx.png",
+        "https://i.imgur.com/s9AO7Tl.png"
+      ]
     }
-  }
+  ]
 }
