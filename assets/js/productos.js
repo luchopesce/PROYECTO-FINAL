@@ -21,7 +21,7 @@ export class Producto{
         this.nombre = this.nombre;
         this.subtitulo = this.subtitulo;
         this.precio = this.precio;
-        this.desc = this.desc;
+        this.descuento = this.descuento;
         this.categoria = this.categoria;
         this.oldprice = this.oldprice;
         this.color = this.color;
@@ -83,7 +83,7 @@ export class Producto{
         console.log("SUBTITULO: ", this.subtitulo);
         console.log("PRECIO: ", "$", this.precio);
         console.log("PRECIO ANTIGUO: ", "$", this.oldprice);
-        console.log("DESCUENTO: ", "%", this.desc);
+        console.log("DESCUENTO: ", "%", this.descuento);
         console.log("COLOR: ", this.color);
         console.log("STOCK: ", this.stock);
         console.log("CATEGORIA: ", this.categoria);
@@ -165,7 +165,7 @@ export class Producto{
             });
         }
         else{
-            this.desc = pr_descuento;
+            this.descuento = pr_descuento;
             pr_oldprice = new Intl.NumberFormat('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(pr_oldprice)
             this.oldprice = pr_oldprice;
         }
@@ -174,7 +174,7 @@ export class Producto{
             return Swal.fire({
                 icon: 'error',
                 title: 'Color incorrecto',
-                text: 'Debes ingresar un color',
+                text: 'Debes elejir un color',
             });
         }
         else{
@@ -185,18 +185,18 @@ export class Producto{
             return Swal.fire({
                 icon: 'error',
                 title: 'Stock total incorrecto',
-                text: 'Debes ingresar un stock, tiene que ser un numero',
+                text: 'Debes ingresar un stock, tiene que ser minimo 1',
             });
         }
         else{
             this.stock = pr_stock_total;
         }
 
-        if(typeof pr_desc != "string" || pr_desc == ""){
+        if(typeof pr_desc != "string" || pr_desc == "" || pr_desc.length < 20){
             return Swal.fire({
                 icon: 'error',
                 title: 'Descripcion incorrecta',
-                text: 'Debes ingresar una descripcion',
+                text: 'Debes ingresar una descripcion, minimo 20 caracteres',
             });
         }
         else{

@@ -98,7 +98,7 @@ class Render {
                 th_producto.innerHTML = `<td class="align-middle text-primary pr_id">${producto.id}</td>
                                         <td class="align-middle text-primary pr_name">${producto.nombre}</td>
                                         <td class="align-middle text-primary"><span class="text-primary">$</span> ${producto.precio}</td>
-                                        <td class="align-middle text-primary">${producto.desc} <span class="text-primary">%</span> </td>
+                                        <td class="align-middle text-primary">${producto.descuento} <span class="text-primary">%</span> </td>
                                         <td class="align-middle text-primary">${producto.stock}</td>
                                         <td class="align-middle text-primary pr_categoria">${producto.categoria}</td>
                                         <td class="d-flex justify-content-center">
@@ -146,7 +146,7 @@ class Render {
             <div class="card-newprice">
             <span class="h4">$</span>
             <span class="h4">${producto.precio}</span>
-            <span class="card-newprice-off">${producto.desc}% OFF</span>
+            <span class="card-newprice-off">${producto.descuento}% OFF</span>
             </div>    
             </div>
             </div>
@@ -177,7 +177,7 @@ class Render {
             <div class="card-newprice">
             <span class="h4">$</span>
             <span class="h4">${producto.precio}</span>
-            <span class="card-newprice-off">${producto.desc}% OFF</span>
+            <span class="card-newprice-off">${producto.descuento}% OFF</span>
             </div>    
             </div>
             <div class="card-footer gn_main-propag-item">
@@ -272,7 +272,7 @@ class Render {
                     <div class="col-lg-6 col-sm-12 py-2">
                         <div class="block_price">
                             <p class="block_price__currency">$${producto.precio}</p>
-                            <a href="">Medios de envio</a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#modal_envio-gratis">Medios de envio</a>
                         </div>
                         <div class="block_quantity mt-4">
                             <span class="text_specification">Cantidad</span>

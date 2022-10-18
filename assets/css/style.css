@@ -9132,6 +9132,10 @@ input[type="checkbox"] + label, input[type="radio"] + label {
       .block_quantity__button:hover:before, .block_quantity__button:focus:before {
         color: #536dfe; }
 
+.productosUI {
+  margin-top: 1rem;
+  min-height: 100vh; }
+
 .product-info-tabs {
   margin-top: 25px; }
 
